@@ -1,0 +1,649 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: url('https://graphicsinn1.com/wp-content/uploads/2022/02/Travel-and-tour-company-wallpaper-design-1024x583.jpg') no-repeat center center/cover;
+    color: rgb(231, 12, 12);
+    padding: 100px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #f5f7f5;
+    padding: 10px;
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #36f008;
+    font-weight: bold;
+}
+.hero {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(49, 238, 7);
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#packages {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3Qdx1T47bxDLcf-TKVJ_E1yZyKUHz-zWSzQ&s') no-repeat center center/cover;
+    padding: 50px 20px;
+    color: rgb(6, 245, 18);
+    text-align: center;
+}
+#packages h2 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#packages .search-bar {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+#packages .search-bar input {
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#packagesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.package {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 10px;
+    text-align: left;
+}
+.package img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.package-content {
+    padding: 15px;
+    color: white;
+}
+.package-content h3 {
+    color: #2ef90a;
+}
+.package-content button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #04f104;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.package-content button:hover {
+    background: #35e803;
+}
+footer {
+    text-align: center;
+    background: #09f505;
+    color: white;
+    padding: 10px;
+}
+.booking-form {
+    display: none;
+    background: #fff;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.booking-form button {
+    width: 100%;
+    padding: 10px;
+    background: #04f104;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.booking-form button:hover {
+    background: #35e803;
+}
+
+#admin-section {
+    background-color: #5be4f9;
+    padding: 40px;
+    text-align: center;
+}
+#admin-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#admin-section button {
+    padding: 10px 20px;
+    background: #3704f1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#admin-section button:hover {
+    background: #35e803;
+}
+#booked-details {
+    margin-top: 20px;
+    display: none;
+}
+#booked-details table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+#booked-details table, #booked-details th, #booked-details td {
+    border: 1px solid #ccc;
+    text-align: center;
+}
+#booked-details th, #booked-details td {
+    padding: 10px;
+    text-align: center;
+}
+
+#contact-us {
+    background-color: #e0f7fa; 
+    background-image: url('https://t4.ftcdn.net/jpg/03/95/04/15/360_F_395041586_h21AxqD0dNjxUw3lKFiV5t7qMBJs6wfe.jpg'); /* Replace with your own image URL */
+    background-position: center center;
+    background-size: cover;
+    padding: 150px;
+    text-align: center;
+    color: #f2f0ef; 
+}
+
+#contact-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#contact-us p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-icon img {
+    width: 40px;  
+    height: 40px;
+    margin: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+.social-icon:hover {
+    opacity: 0.8;
+}
+#booked-details {
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+#booked-details button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#booked-details button:hover {
+    background: #0056b3;
+}
+#bookingForm {
+    width: 60%; 
+    max-width: 800px; 
+    margin: auto; 
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.package {
+    display: none; 
+}
+
+.package:nth-child(-n+3) {
+    display: block; 
+}
+#viewBookingDetails {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #1bf507;
+}
+
+#viewBookingDetails input {
+    padding: 8px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#viewBookingDetails button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: rgb(46, 240, 8);
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#viewBookingDetails button:hover {
+    background-color: #0056b3;
+}
+
+#bookingDetailsContainer p {
+    margin: 8px 0;
+}
+
+#customerBookingDetails {
+    margin-top: 20px;
+}
+
+#initialViewBooking,
+#viewBookingDetails,
+#customerBookingDetails {
+    text-align: center;
+}
+
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+input[type="email"] {
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+
+#bookingDetailsContainer {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#packageDetailImage {
+    width: 500px; 
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+body {
+    background-color: #f5fbf3; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#cancel-ticket-section {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background: #56f606; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#cancel-ticket-section h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#cancel-email {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#cancel-booking-details {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #007bff;
+    color: white;
+}
+
+td button {
+    background: #dc3545;
+}
+
+td button:hover {
+    background: #a71d2a;
+}
+
+#admin-panel {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: #eb0404; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+
+#viewBookingDetails, #customerBookingDetails {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #d303ef;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+
+#customerEmail {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#bookingDetailsContainer {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgb(37, 231, 3);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: left;
+}
+
+#bookingDetailsContainer p {
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+    margin: 10px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+
+#clearBookingBtn, #cancelViewBookingBtn {
+    background-color: #dc3545;
+}
+
+#clearBookingBtn:hover, #cancelViewBookingBtn:hover {
+    background-color: #a71d2a;
+}
+
+#downloadBookingBtn {
+    background-color: #28a745;
+}
+
+#downloadBookingBtn:hover {
+    background-color: #1e7e34;
+}
+
+#customerBookingDetails {
+    display: none;
+    margin-top: 20px;
+}
+
+#feedback-section {
+    width: 50%;
+    margin: 30px auto;
+    padding: 20px;
+    background: #17ef03;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#feedback-section h2, #feedback-section h3 {
+    color: #333;
+}
+
+#feedbackEmailCheck, #feedbackForm {
+    margin-top: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.feedback-item {
+    background: #3bf203;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+
+#feedbackForm {
+    display: none;
+}
+
+
+button.close-btn {
+    background: #dc3545;
+}
+
+button.close-btn:hover {
+    background: #a71d2a;
+}
+
+#logoutButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#logoutButton:hover {
+    background-color: darkred;
+}
+#loginScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    color: rgb(251, 3, 3);
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 1s ease-in-out;
+}
+
+
+#username {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+@keyframes changeBackground {
+    0% {
+        background-image: url('https://static.vecteezy.com/system/resources/previews/009/432/522/non_2x/starry-night-landscape-with-trees-grass-and-the-moon-vector.jpg');
+    }
+    33% {
+        background-image: url('https://wallpaperaccess.com/full/39672.jpg');
+    }
+    66% {
+        background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Travel-Desktop-Wallpaper.jpg');
+    }
+    100% {
+        background-image: url('https://static.vecteezy.com/system/resources/previews/009/432/522/non_2x/starry-night-landscape-with-trees-grass-and-the-moon-vector.jpg');
+    }
+}
+
+#loginScreen {
+    animation: changeBackground 15s infinite;
+}
+
+
+
+
+
+
+
