@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Travel - Your Gateway to Adventure</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+</head>
+<body onload="checkLogin()">
+
+    <div id="loginScreen">
+        <h2>Welcome to World Travel</h2>
+        <p>Please enter your name to continue</p>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="loginUser()">Login</button>
+    </div>
+
+<div id="mainContent" style="display: none;">
+    <header>
+        <h1>World Travel</h1>
+        <p>Your Gateway to Adventure</p>
+        <button id="logoutButton" onclick="logoutUser()">Logout</button>
+    </header>>
+    <nav>
+        <a href="#packages">Packages</a>
+        <a href="#contact-us">Contact Us</a>
+        <a href="javascript:void(0);" onclick="toggleSection('viewBookingDetails')">View Booking Details</a>
+        <a href="javascript:void(0);" onclick="toggleSection('cancel-ticket-section')">Cancel Package</a>
+        <a href="javascript:void(0);" onclick="toggleSection('admin-section')">Admin</a>
+
+    <button id="logoutButton" onclick="logoutUser()" style="margin-left: auto; background-color: red; color: white; border: none; padding: 8px 15px; cursor: pointer;">
+        Logout
+    </button>
+    </nav>
+    <section class="hero">
+        <h1>Discover Your Dream Destination</h1>
+    </section>
+
+<div id="initialViewBooking" style="margin: 20px;">
+    <button onclick="showEmailInput()">View My Booked Details</button>
+</div>
+
+
+<div id="mainContent" style="display: none;">
+    <h1>Welcome to World Travel</h1>
+    <p>Explore and book your favorite destinations.</p>
+</div>
+
+
+<div id="viewBookingDetails" style="display: none; margin: 20px;">
+    <h3>Enter your Email to Verify Your Booking</h3>
+    <input type="email" id="customerEmail" placeholder="Enter your email" style="padding: 5px; margin-right: 10px;">
+    <button onclick="viewCustomerBooking()">Verify and View Booking</button>
+    <button onclick="cancelViewBooking()">Close</button>
+</div>
+
+<div id="customerBookingDetails" style="display: none; margin: 20px;">
+    <h4>Booking Details:</h4>
+    <div id="bookingDetailsContainer">
+
+    </div>
+    <button onclick="clearBookingDetails()">close</button>
+
+
+<button onclick="downloadBookingDetails()">Download Booking Details (PDF)</button>
+
+</div>
+    <section id="packages">
+        <h2>Our Travel Packages</h2>
+        
+    
+        <div>
+            <label for="destinationType">Select Destination Type: </label>
+            <select id="destinationType" onchange="filterByType()">
+                <option value="international">International</option>
+                <option value="national">National</option>
+                <option value="states"> states</option>
+            </select>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="searchQuery" placeholder="Search for packages..." oninput="searchPackages()">
+        </div>
+        <div id="packagesContainer"></div>
+    </section> 
+
+
+    <div id="bookingForm"class="booking-form" style="display: none;">
+
+  
+    <button type="button" id="closeBookingForm" onclick="closeBookingForm()">Close</button>
+
+        <h3>Booking Form</h3>
+        <p id="packageName"></p>
+        <p id="costPerPerson"></p>
+        <p>Total Cost: ₹<span id="totalCost"></span></p>
+        <img id="packageDetailImage" alt="Package Detail Image" /><br>
+
+<label for="currentCity">Enter your current city:</label>
+<input type="text" id="currentCity" name="currentCity" required>
+
+  
+        <label for="name">Name:</label>
+        <input type="name" id="customerName" placeholder="Enter your name" />
+
+        
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" placeholder="Enter your phone number" required />
+
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" placeholder="Enter your email" required /><br>
+
+
+        <label for="numPeople">Number of people:</label>
+        <input type="number" id="numPeople" placeholder="Enter number of people" oninput="updateTotalCost()" required />
+
+
+        <label for="fromDate">From Date:</label>
+        <input type="date" id="fromDate" required />
+
+
+        <label for="returnDate">Return Date:</label>
+
+`   <input type="date" id="returnDate" onchange="updateTotalCost()">
+      
+        <label>Do you need a guide?</label>
+        <br>
+        <label for="guideYes">Guide: yes</label>
+        <input type="radio" name="guide" value="yes" onclick="toggleLanguageField()" onchange="updateTotalCost()" >
+       
+<label for="guideNo">Guide: No</label>
+<input type="radio" name="guide" value="no" onclick="toggleLanguageField()" onchange="updateTotalCost()">
+        
+        <div id="languageDiv" style="display: none;">
+            <label for="language">Preferred Language:</label>
+            <select id="language">
+                <option value="tamil">Tamil</option>
+                <option value="kannada">Kannada</option>
+                <option value="punjabi">Punjabi</option>
+                <option value="hindi">Hindi</option>
+                <option value="telugu">Telugu</option>
+                <option value="english">English</option>
+            </select>
+        </div>
+        <div id="travelOptionDiv">
+            <label for="travelOption">Select Travel Option:</label>
+            <select id="travelOption">
+                <option value="bus">Bus</option>
+                <option value="train">Train</option>
+                <option value="flight">Flight</option>
+            </select>
+        </div>
+     
+<div id="flightClassDiv" style="display: none;">
+    <label for="flightClass">Flight Class:</label>
+    <select id="flightClass" name="flightClass">
+        <option value="economy">Economy</option>
+        <option value="business">Business</option>
+        <option value="firstClass">First Class</option>
+    </select>
+</div>
+
+<div id="coachTypeDiv" style="display: none;">
+    <label for="coachType">Choose Coach Type:</label>
+    <select id="coachType" name="coachType">
+        <option value="First Class">First Class</option>
+        <option value="Sleeper">Sleeper</option>
+        <option value="Second Class">Second Class</option>
+    </select>
+</div>
+
+    <button type="button" onclick="submitBooking()">Submit Booking</button>
+    </div>
+    </section>
+ 
+    <section id="admin-section" style="display: none;">
+        <h2>Admin Login</h2>
+        <button onclick="authenticateAdmin()">Login</button>
+    </section>
+    
+    <div id="booked-details" style="display:none;">
+        <table></table>
+    </div>
+    <div id="cancel-ticket-section">
+        <h2>Cancel Your Ticket</h2>
+        <input type="email" id="cancel-email" placeholder="Enter Your Email">
+        <button onclick="fetchBookingsForCancellation()">Check My Bookings</button>
+        
+        <div id="cancel-booking-details"></div>
+
+        <button id="close-cancel-section" onclick="closeCancelSection()" style="display: none;">Close</button>
+    </div>
+   
+    <section id="contact-us">
+        <h2>Contact Us</h2>
+    
+        <p>Have any questions or need assistance with your booking? Feel free to reach out to us!</p><br>
+        <p><strong>Email:</strong> support@worldtravel.com</p>
+        <p><strong>Phone:</strong> 7305500667</p>
+        <p><strong>Address:</strong> gandhi road 5th  Street,velachery,chennai-42 </p>
+
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/640px-Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png" alt="Facebook">
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" class="social-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/480px-LinkedIn_logo_initials.png" alt="LinkedIn">
+            </a>
+        </div>
+       
+    </section>
+
+    <div id="bookingForm" style="display: none;">
+        <h2>Booking Form</h2>
+        <p><strong>Package Name:</strong> <span id="packageName"></span></p>
+        <p><strong>Cost Per Person:</strong> ₹<span id="costPerPerson"></span></p>
+        <p><strong>Total Cost:</strong> ₹<span id="totalCost"></span></p>
+        <label for="numPeople">Number of People:</label>
+        <input type="number" id="numPeople" value="1" onchange="updateTotalCost()" min="1">
+    
+        <button type="button" onclick="submitBooking()">Submit Booking</button>
+       
+    </div>
+    <section id="feedback-section">
+        <h2>We Value Your Feedback</h2>
+        <p>Your feedback helps us improve our services. Let us know your thoughts!</p>
+    
+        <div id="feedbackEmailCheck">
+            <h3>Enter Your Email to Give Feedback</h3>
+            <input type="email" id="feedbackEmail" placeholder="Enter your email">
+            <button onclick="verifyBookingForFeedback()">Verify Email</button>
+            <button onclick="closeFeedback()">Clear</button>
+        </div>
+    
+        <div id="feedbackForm" style="display: none;">
+            <label for="feedbackName">Name:</label>
+            <input type="text" id="feedbackName" placeholder="Enter your name">
+    
+            <label for="feedbackMessage">Feedback:</label>
+            <textarea id="feedbackMessage" placeholder="Write your feedback here..."></textarea>
+    
+            <button onclick="submitFeedback()">Submit Feedback</button>
+            <button onclick="closeFeedback()">Close</button> 
+        </div>
+
+        <h3>Recent Feedback</h3>
+        <div id="feedbackList"></div>
+    </section>
+    <footer>
+        <p>&copy; 2025 World Travel | All Rights Reserved</p>
+    </footer>
+    <script src="script1.js"></script>
+    
+
+</body>
+</html>
+        
